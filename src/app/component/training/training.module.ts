@@ -21,7 +21,7 @@
 //   CategoryId: string;
 // }
 
-export interface ITraining {
+export class Training {
   Id: Number;
   Name: string;
   Description: string;

@@ -1,7 +1,7 @@
 <p-panel header="Category">
-  <p-dataTable [value]="trainings" [loading]="loading" [responsive]="true" [reorderableColumns]="true" columnResizeMode="fit"
-    [resizableColumns]="true" [rows]="15" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
-    <p-column selectionMode="multiple" [style]="{width: '150px', 'text-align': 'center'}" styleClass="selectBoxColumn"></p-column>
+  <p-dataTable [value]="trainings" [loading]="loading" loadingIcon="fa-spinner" [responsive]="true" [reorderableColumns]="true"
+    columnResizeMode="fit" [resizableColumns]="true" [rows]="15" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+    <p-column selectionMode="multiple" [style]="{width: '50px'}" styleClass="selectBoxColumn"></p-column>
     <p-column field="Name" header="Name" [sortable]="true"></p-column>
     <p-column field="Description" header="Description" [sortable]="true"></p-column>
     <p-column field="Cost" header="Cost" [sortable]="true" [style]="{width: '150px', 'text-align': 'center'}"></p-column>

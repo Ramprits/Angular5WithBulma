@@ -1,14 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { TrainingService } from "./training.service";
-import { ITraining } from "./ITraining";
+import { TrackerError } from "../../core/tracker.error";
+import { Training, TrainingService } from "../index";
 
 @Component({
   selector: "b-training",
-  templateUrl: "./training.component.html",
-  styleUrls: ["./training.component.scss"]
+  templateUrl: "./training.component.html"
 })
 export class TrainingComponent implements OnInit {
-  trainings: ITraining[];
+  trainings: Training[] | TrackerError;
   loading = false;
   constructor(private trainingService: TrainingService) {}
 

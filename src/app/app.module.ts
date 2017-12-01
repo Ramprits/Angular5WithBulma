@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { RootUrl } from "./core/root-url";
 import { Error404Component } from "./core/404.component";
 import { HomeComponent } from "./home/home.component";
+import { FielderrorsComponent } from "./core/fielderrors/fielderrors.component";
 
 // Raven error checking start here ...
 Raven.config(
@@ -35,7 +36,12 @@ export function provideErrorHandler() {
 }
 
 @NgModule({
-  declarations: [AppComponent, Error404Component, HomeComponent],
+  declarations: [
+    AppComponent,
+    Error404Component,
+    HomeComponent,
+    FielderrorsComponent
+  ],
   imports: [
     BrowserModule,
     PanelModule,

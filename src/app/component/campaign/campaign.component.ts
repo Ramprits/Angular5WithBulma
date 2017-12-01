@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'b-campaign',
-  templateUrl: './campaign.component.html',
-  styleUrls: ['./campaign.component.scss']
+  selector: "b-campaign",
+  templateUrl: "./campaign.component.html"
 })
 export class CampaignComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

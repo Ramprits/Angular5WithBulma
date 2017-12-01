@@ -15,5 +15,5 @@ export * from "./category/category.service";
 export * from "./campaign/ICampaign";
 export * from "./history/IHistory";
 export * from "./need/INeed";
-export * from "./training/ITraining";
+export * from "./training/training.module";
 export * from "./category/ICategory";
