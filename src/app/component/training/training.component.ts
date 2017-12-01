@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { TrackerError } from "../../core/tracker.error";
-import { Training, TrainingService } from "../index";
-
+import { Training } from "./training.module";
+import { TrainingService } from "./training.service";
 @Component({
   selector: "b-training",
   templateUrl: "./training.component.html"
