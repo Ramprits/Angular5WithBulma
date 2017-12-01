@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { SaintGobaonRoutes } from "./saint-gobain.routing";
 import { LoggerService } from "../core/logging.service";
+import { CampaignService } from "./campaign/campaign.service";
 import {
   TrainingComponent,
   CampaignComponent,
@@ -32,6 +33,6 @@ import {
     HistoryComponent,
     NeedComponent
   ],
-  providers: [CotegoryService, TrainingService, LoggerService]
+  providers: [CotegoryService, TrainingService, LoggerService, CampaignService]
 })
 export class SaintGobainModule {}

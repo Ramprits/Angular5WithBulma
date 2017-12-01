@@ -1,6 +1,5 @@
 <div class="container">
   <nav class="navbar is-transparent">
-
     <div class="navbar-brand">
       <a class="navbar-item" [routerLink]="['/']">
         Saint Gobain Train MI
@@ -11,8 +10,6 @@
       <span></span>
       <span></span>
     </div>
-
-
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item is-hoverable" [routerLink]="['/home']">
@@ -63,26 +60,22 @@
                 </span>
               </a>
             </p>
-            <p class="control">
-              <div *ngIf="!(authService.user$ | async)?.uid">
-                <a class="button is-info is-small" (click)="authService.login()">
-                  <span class="icon">
-                    <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-                  </span>
-                  <span>Login</span>
-                </a>
-              </div>
-            </p>
-            <p class="control">
-              <div *ngIf="(authService.user$ | async)?.uid">
-                <a class="button is-info is-small" (click)="authService.logout()">
-                  <span class="icon">
-                    <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-                  </span>
-                  <span>Sign Out</span>
-                </a>
-              </div>
-            </p>
+            <div class="control" *ngIf="!(authService.user$ | async)?.uid">
+              <a class="button is-info is-small" (click)="authService.login()">
+                <span class="icon">
+                  <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+                </span>
+                <span>Login</span>
+              </a>
+            </div>
+            <div class="control" *ngIf="(authService.user$ | async)?.uid">
+              <a class="button is-info is-small" (click)="authService.logout()">
+                <span class="icon">
+                  <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+                </span>
+                <span>Sign Out</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

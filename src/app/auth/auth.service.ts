@@ -7,11 +7,14 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class AuthService {
   user$: Observable<firebase.User>;
-
+  redirectUrl: string;
+  currentUser: firebase.User;
   constructor(private router: Router, public afAuth: AngularFireAuth) {
     this.user$ = this.afAuth.authState;
   }
-
+  isLoggedIn(): boolean {
+    return !!this.currentUser;
+  }
   login() {
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
