@@ -8,6 +8,7 @@ import {
   NavigationError
 } from "@angular/router";
 import { Title } from "@angular/platform-browser";
+import { AuthService } from "./auth/auth.service";
 @Component({
   selector: "b-root",
   templateUrl: "./app.component.html",
@@ -15,7 +16,11 @@ import { Title } from "@angular/platform-browser";
 })
 export class AppComponent {
   loading: boolean;
-  constructor(private router: Router, public title: Title) {
+  constructor(
+    private router: Router,
+    public title: Title,
+    public authService: AuthService
+  ) {
     router.events.subscribe((routerEvent: Event) => {
       this.checkRouterEvent(routerEvent);
     });

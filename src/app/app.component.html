@@ -64,12 +64,24 @@
               </a>
             </p>
             <p class="control">
-              <a class="button is-info is-small" href="/">
-                <span class="icon">
-                  <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-                </span>
-                <span>Login</span>
-              </a>
+              <div *ngIf="!(authService.user$ | async)?.uid">
+                <a class="button is-info is-small" (click)="authService.login()">
+                  <span class="icon">
+                    <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+                  </span>
+                  <span>Login</span>
+                </a>
+              </div>
+            </p>
+            <p class="control">
+              <div *ngIf="(authService.user$ | async)?.uid">
+                <a class="button is-info is-small" (click)="authService.logout()">
+                  <span class="icon">
+                    <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+                  </span>
+                  <span>Sign Out</span>
+                </a>
+              </div>
             </p>
           </div>
         </div>

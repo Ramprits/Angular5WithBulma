@@ -16,6 +16,9 @@ import { RootUrl } from "./core/root-url";
 import { Error404Component } from "./core/404.component";
 import { HomeComponent } from "./home/home.component";
 import { FielderrorsComponent } from "./core/fielderrors/fielderrors.component";
+import { AuthGuard } from "./auth/auth.guard";
+import { AuthService } from "./auth/auth.service";
+import { AngularFireAuthModule } from "angularfire2/auth";
 
 // Raven error checking start here ...
 Raven.config(
@@ -51,11 +54,12 @@ export function provideErrorHandler() {
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
     environment.production
       ? ServiceWorkerModule.register("/ngsw-worker.js")
       : []
   ],
-  providers: [RootUrl],
+  providers: [RootUrl, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -12,7 +12,7 @@ export * from "./training/training.service";
 export * from "./category/category.service";
 
 // Interface export here ...
-export * from "./campaign/ICampaign";
+export * from "./campaign/Campaign";
 export * from "./history/IHistory";
 export * from "./need/INeed";
 export * from "./training/training.module";
