@@ -1,21 +1,87 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <nav class="navbar is-transparent">
 
-<router-outlet></router-outlet>
+    <div class="navbar-brand">
+      <a class="navbar-item" [routerLink]="['/']">
+        Saint Gobain Train MI
+      </a>
+    </div>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item is-hoverable" [routerLink]="['/home']">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Categories
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" [routerLink]="['/saintGobain/training']">
+              Training
+            </a>
+            <a class="navbar-item" [routerLink]="['/saintGobain/category']">
+              Category
+            </a>
+            <a class="navbar-item" [routerLink]="['/saintGobain/campaign']">
+              Campaign
+            </a>
+            <a class="navbar-item" [routerLink]="['/saintGobain/need']">
+              Need
+            </a>
+            <a class="navbar-item">
+              User List
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Role
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-small" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000"
+                target="_blank">
+                <span class="icon">
+                  <i class="fa fa-twitter"></i>
+                </span>
+                <span>
+                  Tweet
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-info is-small" href="/">
+                <span class="icon">
+                  <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+                </span>
+                <span>Login</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <router-outlet>
+    <span class="glyphicon glyphicon-refresh glyphicon-spin spinner" *ngIf="loading">
+      <i class="fa fa-spinner" style="color:rgb(195, 199, 202);" aria-hidden="true"></i>
+    </span>
+  </router-outlet>
+
+</div>
