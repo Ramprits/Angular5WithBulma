@@ -17,15 +17,19 @@ export class ContactComponent implements OnInit {
     private router: Router
   ) {}
   contacts: Contact[] | TrackerError;
+  loading = false;
+
   ngOnInit() {}
 
   GetContacts() {
+    this.loading = true;
     this.contactService.GetContact().subscribe(
       contact => (this.contacts = contact),
       (err: TrackerError) => {
         console.log(err.errorNumber);
       },
       () => {
+        this.loading = false;
         console.log("Loaded sucessfully");
       }
     );
