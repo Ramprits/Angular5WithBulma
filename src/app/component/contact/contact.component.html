@@ -1,5 +1,10 @@
-<p-panel header="Contact">
-  <button type="button" class="button is-small is-primary" (click)="addContact()">Add Contact</button>
+<p-panel>
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Contact</span>
+      <button type="button" class="button is-small is-primary is-mobile" style="float:right" (click)="addContact()">Add Contact</button>
+    </div>
+  </p-header>
   <p-dataTable [value]="contacts" [loading]="loading" loadingIcon="fa-spinner" [responsive]="true" [reorderableColumns]="true"
     columnResizeMode="fit" [resizableColumns]="true" [rows]="15" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
     <p-column selectionMode="multiple" [style]="{width: '50px'}" styleClass="selectBoxColumn"></p-column>
