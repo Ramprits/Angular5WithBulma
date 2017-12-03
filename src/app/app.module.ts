@@ -19,6 +19,8 @@ import { FielderrorsComponent } from "./core/fielderrors/fielderrors.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { AuthService } from "./auth/auth.service";
 import { AngularFireAuthModule } from "angularfire2/auth";
+// Fature module
+import { SaintGobainModule } from "./component/saint-gobain.module";
 
 // Raven error checking start here ...
 Raven.config(
@@ -49,6 +51,7 @@ export function provideErrorHandler() {
     BrowserModule,
     PanelModule,
     ReactiveFormsModule,
+    SaintGobainModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

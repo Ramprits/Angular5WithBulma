@@ -1,5 +1,11 @@
 import { NgModule } from "@angular/core";
-import { InputTextModule, DataTableModule, PanelModule } from "primeng/primeng";
+import {
+  InputTextModule,
+  DataTableModule,
+  PanelModule,
+  GrowlModule,
+  ButtonModule
+} from "primeng/primeng";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
@@ -15,11 +21,16 @@ import {
   CotegoryService,
   TrainingService
 } from "./index";
+import { ContactComponent } from "./contact/contact.component";
+import { ContactService } from "./contact/contact.service";
+import { AddContactComponent } from "./contact/add-contact/add-contact.component";
 
 @NgModule({
   imports: [
     InputTextModule,
     PanelModule,
+    GrowlModule,
+    ButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
     DataTableModule,
@@ -31,8 +42,16 @@ import {
     CampaignComponent,
     CategoryComponent,
     HistoryComponent,
-    NeedComponent
+    NeedComponent,
+    ContactComponent,
+    AddContactComponent
   ],
-  providers: [CotegoryService, TrainingService, LoggerService, CampaignService]
+  providers: [
+    CotegoryService,
+    TrainingService,
+    LoggerService,
+    CampaignService,
+    ContactService
+  ]
 })
 export class SaintGobainModule {}

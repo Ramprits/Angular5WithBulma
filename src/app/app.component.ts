@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 import {
   Router,
   Event,
@@ -12,7 +12,8 @@ import { AuthService } from "./auth/auth.service";
 @Component({
   selector: "b-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+  styleUrls: ["./app.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   loading: boolean;

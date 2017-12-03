@@ -1,0 +1,67 @@
+<p-growl [value]="msgs" sticky="sticky"></p-growl>
+
+<form [formGroup]="addContact" (ngSubmit)="onSubmit(addContact.value)">
+  <p-panel header="Validate">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Name *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="name" placeholder="You must enter name" />
+        </div>
+        <div class="ui-grid-col-4">
+
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Mobile *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="mobile" placeholder="You must enter mobile" />
+        </div>
+        <div class="ui-grid-col-4">
+
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Subject *:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="subject" placeholder="You must enter subject" />
+        </div>
+        <div class="ui-grid-col-4">
+
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Email:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="email" placeholder="You must enter email" />
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Comment:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="comment" placeholder="You must enter comment" />
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="Submit" [disabled]="!addContact.valid"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </div>
+  </p-panel>
+</form>

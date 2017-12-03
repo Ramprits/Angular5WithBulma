@@ -1,92 +1,91 @@
-<div class="container">
-  <nav class="navbar is-transparent">
-    <div class="navbar-brand">
-      <a class="navbar-item" [routerLink]="['/']">
-        Saint Gobain Train MI
+<nav class="navbar is-primary">
+  <div class="navbar-brand">
+    <a class="navbar-item" [routerLink]="['/home']">
+      Saint Gobain Train MI
+    </a>
+  </div>
+  <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item is-hoverable" [routerLink]="['/home']">
+        Home
       </a>
-    </div>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item is-hoverable" [routerLink]="['/home']">
-          Home
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Categories
         </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            Categories
+        <div class="navbar-dropdown">
+          <a class="navbar-item" [routerLink]="['/saintGobain/training']">
+            Training
           </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" [routerLink]="['/saintGobain/training']">
-              Training
-            </a>
-            <a class="navbar-item" [routerLink]="['/saintGobain/category']">
-              Category
-            </a>
-            <a class="navbar-item" [routerLink]="['/saintGobain/campaign']">
-              Campaign
-            </a>
-            <a class="navbar-item" [routerLink]="['/saintGobain/need']">
-              Need
-            </a>
-            <a class="navbar-item">
-              User List
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Role
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-          </div>
+          <a class="navbar-item" [routerLink]="['/saintGobain/category']">
+            Category
+          </a>
+          <a class="navbar-item" [routerLink]="['/saintGobain/campaign']">
+            Campaign
+          </a>
+          <a class="navbar-item" [routerLink]="['/saintGobain/need']">
+            Need
+          </a>
+          <a class="navbar-item">
+            User List
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Role
+          </a>
+          <a class="navbar-item" [routerLink]="['/saintGobain/contact']">
+            Contact
+          </a>
         </div>
       </div>
+    </div>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-small" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000"
-                target="_blank">
-                <span class="icon">
-                  <i class="fa fa-twitter"></i>
-                </span>
-                <span>
-                  Tweet
-                </span>
-              </a>
-            </p>
-            <div class="control" *ngIf="!(authService.user$ | async)?.uid">
-              <a class="button is-info is-small" (click)="authService.login()">
-                <span class="icon">
-                  <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-                </span>
-                <span>Login</span>
-              </a>
-            </div>
-            <div class="control" *ngIf="(authService.user$ | async)?.uid">
-              <a class="button is-info is-small" (click)="authService.logout()">
-                <span class="icon">
-                  <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-                </span>
-                <span>Sign Out</span>
-              </a>
-            </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-small" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000"
+              target="_blank">
+              <span class="icon">
+                <i class="fa fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p>
+          <div class="control" *ngIf="!(authService.user$ | async)?.uid">
+            <a class="button is-info is-small" (click)="authService.login()">
+              <span class="icon">
+                <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+              </span>
+              <span>Login</span>
+            </a>
+          </div>
+          <div class="control" *ngIf="(authService.user$ | async)?.uid">
+            <a class="button is-info is-small" (click)="authService.logout()">
+              <span class="icon">
+                <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
+              </span>
+              <span>Sign Out</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </nav>
-  <br>
-  <br>
+  </div>
+</nav>
+<br>
+<br>
+<div class="container">
   <router-outlet>
     <span class="glyphicon glyphicon-refresh glyphicon-spin spinner" *ngIf="loading">
       <i class="fa fa-spinner" style="color:rgb(195, 199, 202);" aria-hidden="true"></i>
     </span>
   </router-outlet>
-
 </div>

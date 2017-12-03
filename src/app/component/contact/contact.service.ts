@@ -1,29 +1,25 @@
 import { Injectable } from "@angular/core";
-import {
-  HttpClient,
-  HttpResponse,
-  HttpErrorResponse
-} from "@angular/common/http";
-import { Training } from "./training.module";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { RootUrl } from "../../core/root-url";
+import { Contact } from "./contact.model";
 import "rxjs/add/operator/delay";
 import { Observable } from "rxjs/Observable";
-import "rxjs/add/observable/throw";
-import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
-
 import { TrackerError } from "../../core/tracker.error";
 
 @Injectable()
-export class TrainingService {
-  RootUrl = "assets/data/training.json";
-  constructor(private httpClient: HttpClient) {}
-  GetTrainings(): Observable<Training[] | TrackerError> {
+export class ContactService {
+  _rootUrl = "";
+  constructor(private httpClient: HttpClient, private rootUrl: RootUrl) {
+    this._rootUrl = this.rootUrl.getApiURI();
+  }
+
+  GetContact(): Observable<Contact[] | TrackerError> {
     return this.httpClient
-      .get<Training[] | TrackerError>(this.RootUrl)
+      .get<Contact[]>(this._rootUrl)
       .delay(1000)
       .catch(this.handleError);
   }
-
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {
     const dataError = new TrackerError();
     dataError.errorNumber = error.status;
