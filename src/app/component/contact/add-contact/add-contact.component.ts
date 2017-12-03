@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Message } from "primeng/components/common/api";
+import { Router } from "@angular/router";
 @Component({
   selector: "b-add-contact",
   templateUrl: "./add-contact.component.html"
@@ -8,7 +9,7 @@ import { Message } from "primeng/components/common/api";
 export class AddContactComponent implements OnInit {
   addContact: FormGroup;
   msgs: Message[] = [];
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.addContact = this.fb.group({
@@ -22,5 +23,8 @@ export class AddContactComponent implements OnInit {
 
   onSubmit(formData) {
     console.log(formData);
+  }
+  Back() {
+    this.router.navigate(["/saintGobain/contact"]);
   }
 }
