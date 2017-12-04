@@ -24,6 +24,7 @@ import {
 import { ContactComponent } from "./contact/contact.component";
 import { ContactService } from "./contact/contact.service";
 import { AddContactComponent } from "./contact/add-contact/add-contact.component";
+import { EmployeeComponent } from "./employee/employee.component";
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { AddContactComponent } from "./contact/add-contact/add-contact.component
     HistoryComponent,
     NeedComponent,
     ContactComponent,
-    AddContactComponent
+    AddContactComponent,
+    EmployeeComponent
   ],
   providers: [
     CotegoryService,

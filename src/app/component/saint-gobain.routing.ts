@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AuthGuard } from "../auth/auth.guard";
 import { ContactComponent } from "./contact/contact.component";
 import { AddContactComponent } from "./contact/add-contact/add-contact.component";
+import { EmployeeComponent } from "./employee/employee.component";
 import {
   TrainingComponent,
   CategoryComponent,
@@ -19,5 +20,6 @@ export const SaintGobaonRoutes: Routes = [
   { path: "need", component: NeedComponent },
   { path: "campaign", component: CampaignComponent },
   { path: "addContact", component: AddContactComponent },
-  { path: "contact", component: ContactComponent }
+  { path: "contact", component: ContactComponent },
+  { path: "employees", component: EmployeeComponent }
 ];

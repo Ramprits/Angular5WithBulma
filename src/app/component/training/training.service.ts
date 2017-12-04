@@ -5,11 +5,11 @@ import {
   HttpErrorResponse
 } from "@angular/common/http";
 import { Training } from "./training.module";
-import "rxjs/add/operator/delay";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/throw";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
+import { delay } from "rxjs/operators";
 
 import { TrackerError } from "../../core/tracker.error";
 
