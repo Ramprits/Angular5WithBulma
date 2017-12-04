@@ -4,6 +4,8 @@ import { Campaign } from "./Campaign";
 import { TrackerError } from "../../core/tracker.error";
 import { HttpErrorResponse } from "@angular/common/http";
 import { LoggerService } from "../../core/logging.service";
+import { Router } from "@angular/router";
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "b-campaign",
@@ -12,9 +14,13 @@ import { LoggerService } from "../../core/logging.service";
 export class CampaignComponent implements OnInit {
   camp: Campaign[];
   loading = false;
+  AddNewCampaign = false;
+  campaignForm: FormGroup;
   constructor(
     private campaignService: CampaignService,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private router: Router,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
@@ -37,5 +43,27 @@ export class CampaignComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+  BuildForm() {
+    this.campaignForm = this.fb.group({
+      name: ["", [Validators.required]],
+      description: ["", [Validators.required]],
+      startDate: ["12/12/2017", [Validators.required]],
+      maximumWishes: ["", [Validators.required]],
+      year: ["12/12/2017", [Validators.required]],
+      isActive: [false, [Validators.required]],
+      isClose: [false, [Validators.required]],
+      userLock: [false, [Validators.required]],
+      managerLock: [false, [Validators.required]]
+    });
+  }
+  AddCampaign(campaign: Campaign) {
+    this.campaignService
+      .insertCampaign(campaign)
+      .subscribe((camp: Campaign) => {
+        if (camp) {
+          this.router.navigate(["/"]);
+        }
+      });
   }
 }

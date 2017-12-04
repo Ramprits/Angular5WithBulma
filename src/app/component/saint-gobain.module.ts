@@ -4,9 +4,11 @@ import {
   DataTableModule,
   PanelModule,
   GrowlModule,
-  ButtonModule
+  ButtonModule,
+  CheckboxModule,
+  DataGridModule
 } from "primeng/primeng";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { SaintGobaonRoutes } from "./saint-gobain.routing";
@@ -24,14 +26,18 @@ import {
 import { ContactComponent } from "./contact/contact.component";
 import { ContactService } from "./contact/contact.service";
 import { AddContactComponent } from "./contact/add-contact/add-contact.component";
+import { RootUrl } from "../core/root-url";
 
 @NgModule({
   imports: [
     InputTextModule,
     PanelModule,
+    CheckboxModule,
     GrowlModule,
+    DataGridModule,
     ButtonModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     DataTableModule,
     RouterModule.forChild(SaintGobaonRoutes)
@@ -51,7 +57,8 @@ import { AddContactComponent } from "./contact/add-contact/add-contact.component
     TrainingService,
     LoggerService,
     CampaignService,
-    ContactService
+    ContactService,
+    RootUrl
   ]
 })
 export class SaintGobainModule {}

@@ -1,3 +1,22 @@
-<p-panel header="Category">
-  category works!
-</p-panel>
+<p-dataGrid [value]="categories">
+  <ng-template let-category pTemplate="item">
+    <div style="padding:3px" class="ui-g-12 ui-md-3">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="assets/images/{{category.imageUrl}}" style="cursor:pointer">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+            </div>
+            <div class="media-content">
+              <p class="title is-4">{{category.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataGrid>

@@ -12,7 +12,8 @@ import { Title } from "@angular/platform-browser";
 export class TrainingComponent implements OnInit {
   trainings: Training[] | TrackerError;
   loading = false;
-  @Input() training: Training;
+  checked = false;
+  isFree = false;
   constructor(
     private trainingService: TrainingService,
     private logger: LoggerService,
