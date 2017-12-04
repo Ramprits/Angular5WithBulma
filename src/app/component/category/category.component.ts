@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CotegoryService } from "./category.service";
 import { LoggerService } from "../../core/logging.service";
 import { Title } from "@angular/platform-browser";
-import { ICategory } from "./ICategory";
+import { ICategory, Category } from "./ICategory";
 import { TrackerError } from "../../core/tracker.error";
 
 @Component({
@@ -11,6 +11,7 @@ import { TrackerError } from "../../core/tracker.error";
 })
 export class CategoryComponent implements OnInit {
   categories: ICategory[] | TrackerError;
+  category: Category = new PrimeCategory();
   constructor(
     private categoriesService: CotegoryService,
     private logger: LoggerService,
@@ -27,4 +28,25 @@ export class CategoryComponent implements OnInit {
       this.categories = category;
     });
   }
+  onRowSelect(event) {
+    alert(event);
+  }
+
+  cloneCar(c: Category): Category {
+    const category = new PrimeCategory();
+    // tslint:disable-next-line:forin
+    for (const prop in category) {
+      category[prop] = category[prop];
+    }
+    return category;
+  }
+}
+class PrimeCategory implements Category {
+  constructor(
+    public categoryId?,
+    public name?,
+    public description?,
+    public imageUrl?,
+    public isActive?
+  ) {}
 }

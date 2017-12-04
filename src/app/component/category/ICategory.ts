@@ -8,3 +8,10 @@ export interface ICategory {
   isActive: boolean;
   training: Training[];
 }
+export class Category {
+  public categoryId?: "";
+  public name?: "";
+  public description?: "";
+  public imageUrl?: "";
+  public isActive?: false;
+}
