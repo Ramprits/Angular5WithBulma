@@ -12,14 +12,17 @@ import "rxjs/add/operator/catch";
 import { delay } from "rxjs/operators";
 
 import { TrackerError } from "../../core/tracker.error";
+import { RootUrl } from "../../core/root-url";
 
 @Injectable()
 export class TrainingService {
-  RootUrl = "assets/data/training.json";
-  constructor(private httpClient: HttpClient) {}
+  // private RootUrl = `http://localhost:5000/api/trainings`;
+  constructor(private httpClient: HttpClient, private rootUrl: RootUrl) {
+    // this.RootUrl = this.rootUrl.getApiURI();
+  }
   GetTrainings(): Observable<Training[] | TrackerError> {
     return this.httpClient
-      .get<Training[] | TrackerError>(this.RootUrl)
+      .get<Training[] | TrackerError>(`http://localhost:5000/api/trainings`)
       .delay(1000)
       .catch(this.handleError);
   }

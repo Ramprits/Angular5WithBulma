@@ -22,9 +22,10 @@
 // }
 
 export class Training {
-  Id: Number;
-  Name: string;
-  Description: string;
-  Cost: Number;
-  comments: string;
+  name: string;
+  description: string;
+  isActive: boolean;
+  isFree: boolean;
+  averageCost: Number;
+  concernedPublic: string;
 }

@@ -10,3 +10,8 @@ export class Campaign {
   userLock: boolean;
   managerLock: boolean;
 }
+
+export interface ICampaignResponse {
+  status: boolean;
+  campaign: Campaign;
+}

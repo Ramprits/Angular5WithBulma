@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { environment } from "../environments/environment";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { RootUrl } from "./core/root-url";
 import { Error404Component } from "./core/404.component";
@@ -49,6 +49,7 @@ export function provideErrorHandler() {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     PanelModule,
     ReactiveFormsModule,
     SaintGobainModule,
