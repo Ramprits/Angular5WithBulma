@@ -21,7 +21,9 @@ export class CotegoryService {
   getCategories(): Observable<ICategory[] | TrackerError> {
     return this.httpClient
       .get<ICategory[]>(`http://localhost:5000/api/Categories`)
-      .delay(1000)
+      .map((category: ICategory[]) => {
+        return category;
+      })
       .catch(this.handleError);
   }
 

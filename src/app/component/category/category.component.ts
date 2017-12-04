@@ -18,18 +18,19 @@ export class CategoryComponent implements OnInit {
     private title: Title
   ) {
     this.title.setTitle("Categories");
-  }
-
-  ngOnInit() {
     this.GetCategories();
   }
+
+  ngOnInit() {}
   GetCategories() {
-    this.categoriesService.getCategories().subscribe(category => {
-      this.categories = category;
-    });
+    this.categoriesService
+      .getCategories()
+      .subscribe((category: ICategory[]) => {
+        this.categories = category;
+      });
   }
   onRowSelect(event) {
-    alert(event);
+   console.log(event);
   }
 
   cloneCar(c: Category): Category {
