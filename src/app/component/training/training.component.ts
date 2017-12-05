@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { TrackerError } from "../../core/tracker.error";
-import { Training } from "./training.module";
+import { GetTraining } from "./training.module";
 import { TrainingService } from "./training.service";
 import { LoggerService } from "../../core/logging.service";
 import { Title } from "@angular/platform-browser";
@@ -10,7 +10,7 @@ import { Title } from "@angular/platform-browser";
   templateUrl: "./training.component.html"
 })
 export class TrainingComponent implements OnInit {
-  trainings: Training[] | TrackerError;
+  trainings: GetTraining[] | TrackerError;
   loading = false;
   checked = false;
   isFree = false;
@@ -23,7 +23,11 @@ export class TrainingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.GetTrainings();
+    try {
+      this.GetTrainings();
+    } catch (error) {
+      console.log(error);
+    }
   }
   GetTrainings() {
     this.loading = true;
@@ -36,4 +40,6 @@ export class TrainingComponent implements OnInit {
       () => (this.loading = false)
     );
   }
+
+  addTraining() {}
 }

@@ -1,0 +1,68 @@
+<form [formGroup]="AddTraining" (ngSubmit)="onSubmit(AddTraining.value)">
+  <p-panel header="New Training">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Training Name *:
+        </div>
+        <div class="ui-grid-col-4">
+          <input pInputText type="text" formControlName="name" placeholder="Training Name..." />
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddTraining" field="name" nicename="Training Name"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Training Name *:
+        </div>
+        <div class="ui-grid-col-4">
+          <input pInputText type="text" formControlName="name" placeholder="Training Name..." />
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddTraining" field="name" nicename="Training Name"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Training Name *:
+        </div>
+        <div class="ui-grid-col-4">
+          <input pInputText type="text" formControlName="name" placeholder="Training Name..." />
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddTraining" field="name" nicename="Training Name"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Training Name *:
+        </div>
+        <div class="ui-grid-col-4">
+          <input pInputText type="text" formControlName="name" placeholder="Training Name..." />
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddTraining" field="name" nicename="Training Name"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Training Name *:
+        </div>
+        <div class="ui-grid-col-4">
+          <input pInputText type="text" formControlName="name" placeholder="Training Name..." />
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddTraining" field="name" nicename="Training Name"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-4">
+          <button pButton type="submit" label="Submit" [disabled]="!AddTraining.valid"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </div>
+  </p-panel>
+</form>

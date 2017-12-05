@@ -1,4 +1,10 @@
-<p-panel header="Training">
+<p-panel>
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Training</span>
+      <button type="button" class="button is-small is-primary is-mobile" style="float:right" (click)="addTraining()">Add Training</button>
+    </div>
+  </p-header>
   <p-dataTable [value]="trainings" [loading]="loading" loadingIcon="fa-spinner" [responsive]="true" [reorderableColumns]="true"
     columnResizeMode="fit" [resizableColumns]="true" [rows]="15" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
     <p-column selectionMode="multiple" [style]="{width: '50px'}" styleClass="selectBoxColumn"></p-column>
@@ -6,15 +12,7 @@
     <p-column field="description" header="Description" [sortable]="true" [style]="{'text-align': 'center'}"></p-column>
     <p-column field="averageCost" header="Average Cost" [sortable]="true" [style]="{'text-align': 'center'}"></p-column>
     <p-column field="concernedPublic" header="Concerned Public" [sortable]="true" [style]="{'text-align': 'center'}"></p-column>
-    <p-column styleClass="col-button" header="Free" [style]="{'text-align': 'center'}">
-      <ng-template let-isFree="rowData" pTemplate="body">
-        <p-checkbox [(ngModel)]="checked" [disabled]="true"></p-checkbox>
-      </ng-template>
-    </p-column>
-    <p-column styleClass="col-button" header="Active" [style]="{'text-align': 'center'}">
-      <ng-template let-isActive="rowData" pTemplate="body">
-        <p-checkbox [(ngModel)]="checked" [disabled]="true"></p-checkbox>
-      </ng-template>
-    </p-column>
+    <p-column field="businessUnitName" header="Business" [sortable]="true" [style]="{'text-align': 'center'}"></p-column>
+    <p-column field="modalityName" header="Modality" [sortable]="true" [style]="{'text-align': 'center'}"></p-column>
   </p-dataTable>
 </p-panel>

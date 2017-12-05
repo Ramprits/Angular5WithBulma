@@ -1,31 +1,35 @@
-// export interface ITraining {
-//   trainingId: string;
-//   Name: string;
-//   Description: string;
-//   IsActive: boolean;
-//   IsFree: boolean;
-//   StartDate;
-//   AverageCost: Number;
-//   ConcernedPublic: string;
-//   EducationalObjectives: string;
-//   OthersEducationalObjectives: string;
-//   DurationInDays: Number;
-//   Location: string;
-//   ExternalLinks: string;
-//   Language: string;
-//   IsApproved: boolean;
-//   IsCPF: boolean;
-//   BusinessUnitId: string;
-//   ModalityId: string;
-//   OrganizationId: string;
-//   CategoryId: string;
-// }
+export interface ITraining {
+  trainingId: string;
+  name: string;
+  description: string;
+  isActive: boolean;
+  isFree: boolean;
+  startDate: Date;
+  averageCost: number;
+  concernedPublic: string;
+  educationalObjectives: string;
+  othersEducationalObjectives: string;
+  durationInDays: number;
+  location: string;
+  externalLinks: string;
+  language: string;
+  isApproved: boolean;
+  isCPF: boolean;
+  businessUnitId: string;
+  modalityId: string;
+  organizationId: string;
+  categoryId: string;
+  createdDate: Date;
+}
 
-export class Training {
+export class GetTraining {
   name: string;
   description: string;
   isActive: boolean;
   isFree: boolean;
   averageCost: Number;
   concernedPublic: string;
+  businessUnitName: string;
+  modalityName: string;
+  organizationName: string;
 }

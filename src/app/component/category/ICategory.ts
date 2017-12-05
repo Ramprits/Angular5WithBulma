@@ -1,4 +1,4 @@
-import { Training } from "../index";
+import { GetTraining } from "../index";
 
 export interface ICategory {
   categoryId: string;
@@ -6,7 +6,7 @@ export interface ICategory {
   description: string;
   imageUrl: string;
   isActive: boolean;
-  training: Training[];
+  training: GetTraining[];
 }
 export class Category {
   public categoryId?: "";

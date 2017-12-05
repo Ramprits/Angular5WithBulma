@@ -27,6 +27,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { ContactService } from "./contact/contact.service";
 import { AddContactComponent } from "./contact/add-contact/add-contact.component";
 import { RootUrl } from "../core/root-url";
+import { AddTrainingComponent } from "./training/add-training/add-training.component";
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { RootUrl } from "../core/root-url";
     HistoryComponent,
     NeedComponent,
     ContactComponent,
-    AddContactComponent
+    AddContactComponent,
+    AddTrainingComponent
   ],
   providers: [
     CotegoryService,

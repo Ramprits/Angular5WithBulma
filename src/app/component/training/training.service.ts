@@ -4,7 +4,7 @@ import {
   HttpResponse,
   HttpErrorResponse
 } from "@angular/common/http";
-import { Training } from "./training.module";
+import { GetTraining } from "./training.module";
 import "rxjs/add/operator/delay";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/throw";
@@ -20,9 +20,9 @@ export class TrainingService {
   constructor(private httpClient: HttpClient, private rootUrl: RootUrl) {
     // this.RootUrl = this.rootUrl.getApiURI();
   }
-  GetTrainings(): Observable<Training[] | TrackerError> {
+  GetTrainings(): Observable<GetTraining[] | TrackerError> {
     return this.httpClient
-      .get<Training[] | TrackerError>(`http://localhost:5000/api/trainings`)
+      .get<GetTraining[] | TrackerError>(`http://localhost:5000/api/trainings`)
       .delay(1000)
       .catch(this.handleError);
   }
