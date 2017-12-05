@@ -10,6 +10,7 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/throw";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
+import { delay } from "rxjs/operators";
 
 import { TrackerError } from "../../core/tracker.error";
 import { RootUrl } from "../../core/root-url";
