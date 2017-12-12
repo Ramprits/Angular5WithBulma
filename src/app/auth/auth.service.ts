@@ -1,29 +1,50 @@
-import * as firebase from "firebase/app";
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { catchError } from "rxjs/operators";
 import { Router } from "@angular/router";
-import { AngularFireAuth } from "angularfire2/auth";
 import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class AuthService {
-  user$: Observable<firebase.User>;
-  redirectUrl: string;
-  currentUser: firebase.User;
-  constructor(private router: Router, public afAuth: AngularFireAuth) {
-    this.user$ = this.afAuth.authState;
+  constructor(private httpClient: HttpClient, private router: Router) {}
+
+  get isAuthenticated() {
+    return !!localStorage.getItem("token");
   }
-  isLoggedIn(): boolean {
-    return !!this.currentUser;
+  register(credentials) {
+    return this.httpClient
+      .post<any>(`http://localhost:5000/api/Account`, credentials)
+      .subscribe(
+        res => {
+          this.authenticated(res);
+        },
+        err => {
+          console.log(
+            "Unable to register. You may be already registered user.",
+            err
+          );
+        }
+      );
   }
-  login() {
-    this.afAuth.auth
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then(_ => this.router.navigate([`/home`]))
-      .catch(error => console.log("auth error", error));
+  login(credentials) {
+    return this.httpClient
+      .post<any>(`http://localhost:5000/api/Account/login`, credentials)
+      .subscribe(
+        res => {
+          this.authenticated(res);
+        },
+        err => {
+          console.log("Unable to login. You may be not registered user.", err);
+        }
+      );
+  }
+  authenticated(res) {
+    localStorage.setItem("token", res);
+    this.router.navigate(["/"]);
+  }
+  logout() {
+    localStorage.removeItem("token");
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
-    this.router.navigate([`/home`]);
-  }
+
 }

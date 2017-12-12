@@ -29,9 +29,11 @@ import { AddContactComponent } from "./contact/add-contact/add-contact.component
 import { EmployeeComponent } from "./employee/employee.component";
 import { RootUrl } from "../core/root-url";
 import { AddTrainingComponent } from "./training/add-training/add-training.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   imports: [
+    CommonModule,
     InputTextModule,
     PanelModule,
     CheckboxModule,
@@ -53,7 +55,8 @@ import { AddTrainingComponent } from "./training/add-training/add-training.compo
     NeedComponent,
     ContactComponent,
     AddContactComponent,
-    AddTrainingComponent
+    AddTrainingComponent,
+    EmployeeComponent
   ],
   providers: [
     CotegoryService,

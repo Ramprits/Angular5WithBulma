@@ -59,22 +59,6 @@
               </span>
             </a>
           </p>
-          <div class="control" *ngIf="!(authService.user$ | async)?.uid">
-            <a class="button is-info is-small" (click)="authService.login()">
-              <span class="icon">
-                <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-              </span>
-              <span>Login</span>
-            </a>
-          </div>
-          <div class="control" *ngIf="(authService.user$ | async)?.uid">
-            <a class="button is-info is-small" (click)="authService.logout()">
-              <span class="icon">
-                <i class="fa fa-google" style="color:rgb(250, 127, 127)"></i>
-              </span>
-              <span>Sign Out</span>
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -85,7 +69,7 @@
 <div class="container">
   <router-outlet>
     <span class="glyphicon glyphicon-refresh glyphicon-spin spinner" *ngIf="loading">
-      <i class="fa fa-spinner" style="color:rgb(195, 199, 202);" aria-hidden="true"></i>
+      <i class="fa fa-spinner fa-pulse fa-1x fa-fw" style="color:rgb(48, 149, 221);" aria-hidden="true"></i>
     </span>
   </router-outlet>
 </div>
