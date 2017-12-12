@@ -40,6 +40,5 @@ export class TrainingComponent implements OnInit {
       () => (this.loading = false)
     );
   }
-
   addTraining() {}
 }

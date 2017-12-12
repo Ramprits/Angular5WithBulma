@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "./auth.service";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "b-register",
@@ -10,7 +11,13 @@ import { AuthService } from "./auth.service";
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, public auth: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    public auth: AuthService,
+    private title: Title
+  ) {
+    this.title.setTitle("Register");
+  }
 
   ngOnInit() {
     this.registerForm = this.fb.group({

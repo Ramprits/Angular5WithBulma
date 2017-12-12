@@ -49,7 +49,7 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="button is-small" [routerLink]="['/login']" *ngIf="!auth.isAuthenticated">
+            <a class="button is-white is-small" [routerLink]="['/login']" *ngIf="!auth.isAuthenticated">
               <span class="icon">
                 <i class="fa fa-sign-in"></i>
               </span>
@@ -57,15 +57,12 @@
                 Login
               </span>
             </a>
-            <a class="button is-small" [routerLink]="['/register']" *ngIf="!auth.isAuthenticated">
+            <a class="button is-white is-small" [routerLink]="['/register']" *ngIf="!auth.isAuthenticated">
               <span class="icon">
-                <i class="fa fa-sign-in"></i>
-              </span>
-              <span>
-                Register
+                <i class="fa fa-registered"></i>
               </span>
             </a>
-            <a class="button is-small" (click)="logout()" *ngIf="auth.isAuthenticated">
+            <a class="button is-white is-small" (click)="logout()" *ngIf="auth.isAuthenticated">
               <span class="icon">
                 <i class="fa fa-sign-in"></i>
               </span>
