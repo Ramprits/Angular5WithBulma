@@ -1,3 +1,59 @@
-<p>
-  add-campaign works!
-</p>
+<form [formGroup]="AddCampaign" (ngSubmit)="insertCampaign(AddCampaign.value)">
+  <p-panel header="Login page">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Name
+          <em>*</em>
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText formControlName="name" placeholder="Your name">
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddCampaign" field="name" nicename="name"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Description
+          <em>*</em>
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText formControlName="description" placeholder="Your description">
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddCampaign" field="description" nicename="description"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Maximum Wishes
+          <em>*</em>
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText formControlName="maximumWishes" placeholder="Your Max wish">
+        </div>
+        <div class="ui-grid-col-4">
+          <!-- <b-fielderrors [form]="AddCampaign" field="maximumWishes" nicename="maximum wishes"> </b-fielderrors> -->
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Active
+          <em>*</em>
+        </div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText formControlName="isActive">
+        </div>
+        <div class="ui-grid-col-4">
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton [disabled]="AddCampaign.invalid" class="ui-button-success" label="Log-In"> </button>
+        </div>
+      </div>
+    </div>
+  </p-panel>
+</form>

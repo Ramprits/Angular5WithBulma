@@ -26,6 +26,7 @@ import { AuthGuard } from "./auth/auth.guard";
 import { ButtonModule } from "primeng/components/button/button";
 import { InputTextModule } from "primeng/components/inputtext/inputtext";
 import { MessageService } from "primeng/components/common/messageservice";
+import { ProgressSpinnerModule } from "primeng/components/progressspinner/progressspinner";
 
 // Raven error checking start here ...
 Raven.config(
@@ -58,6 +59,7 @@ export function provideErrorHandler() {
     BrowserModule,
     FormsModule,
     GrowlModule,
+    ProgressSpinnerModule,
     PanelModule,
     InputTextModule,
     ButtonModule,

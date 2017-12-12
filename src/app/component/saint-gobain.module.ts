@@ -30,7 +30,7 @@ import { EmployeeComponent } from "./employee/employee.component";
 import { RootUrl } from "../core/root-url";
 import { AddTrainingComponent } from "./training/add-training/add-training.component";
 import { CommonModule } from "@angular/common";
-import { AddCampaignComponent } from './campaign/add-campaign/add-campaign.component';
+import { AddCampaignComponent } from "./campaign/add-campaign/add-campaign.component";
 
 @NgModule({
   imports: [

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { Title } from "@angular/platform-browser";
 import { CampaignService } from "../campaign.service";
 
@@ -8,7 +8,7 @@ import { CampaignService } from "../campaign.service";
   templateUrl: "./add-campaign.component.html"
 })
 export class AddCampaignComponent implements OnInit {
-  AddCampaign;
+  AddCampaign: FormGroup;
   constructor(
     private fb: FormBuilder,
     private title: Title,
@@ -25,9 +25,7 @@ export class AddCampaignComponent implements OnInit {
     this.AddCampaign = this.fb.group({
       name: ["", []],
       description: ["", []],
-      startDate: Date,
       maximumWishes: [0, []],
-      year: Date,
       isActive: false,
       isClose: false,
       userLock: false,
