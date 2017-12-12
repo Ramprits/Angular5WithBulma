@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(
     private router: Router,
     public title: Title,
-    public authService: AuthService
+    public auth: AuthService
   ) {
     router.events.subscribe((routerEvent: Event) => {
       this.checkRouterEvent(routerEvent);
@@ -39,5 +39,9 @@ export class AppComponent {
     ) {
       this.loading = false;
     }
+  }
+  logout() {
+    this.auth.logout();
+    this.router.navigate(["/login"]);
   }
 }
