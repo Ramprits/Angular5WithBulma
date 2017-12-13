@@ -9,7 +9,7 @@ import { TrackerError } from "../../core/tracker.error";
   templateUrl: "./categoryDetail.component.html"
 })
 export class CategoryDetailComponent implements OnInit {
-  category: ICategory | TrackerError;
+  category: ICategory;
   constructor(
     private categoryService: CotegoryService,
     private activatedRoute: ActivatedRoute
