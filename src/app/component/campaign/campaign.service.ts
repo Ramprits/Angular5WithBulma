@@ -22,11 +22,13 @@ export class CampaignService {
 
   insertCampaign(campaign: Campaign): Observable<Campaign | TrackerError> {
     return this.httpClient
-      .post<ICampaignResponse>(this._ROOT, campaign)
+      .post<ICampaignResponse>(this._ROOT + `/campaign`, campaign)
       .map(data => {
-        console.log("insert Campaign status: " + data.status);
-        return data.campaign;
+        if (data) {
+          return data.campaign;
+        }
       })
+      .delay(2000)
       .catch(this.handleError);
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { Title } from "@angular/platform-browser";
 import { CampaignService } from "../campaign.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "b-add-campaign",
@@ -12,12 +13,14 @@ export class AddCampaignComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private title: Title,
-    private campaignService: CampaignService
+    private campaignService: CampaignService,
+    private router: Router
   ) {
     this.title.setTitle("Add Campaign");
   }
   insertCampaign(campaign) {
     this.campaignService.insertCampaign(campaign).subscribe(camp => {
+      this.router.navigate(["/saintGobain/campaign"]);
       return camp;
     });
   }
@@ -26,7 +29,7 @@ export class AddCampaignComponent implements OnInit {
       name: ["", []],
       description: ["", []],
       maximumWishes: [0, []],
-      isActive: false,
+      isActive: true,
       isClose: false,
       userLock: false,
       managerLock: false

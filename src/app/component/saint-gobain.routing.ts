@@ -6,6 +6,7 @@ import { AddTrainingComponent } from "./training/add-training/add-training.compo
 import { EmployeeComponent } from "./employee/employee.component";
 import { AuthGuard } from "../auth/auth.guard";
 import { CategoryDetailComponent } from "./category/category-detail";
+import { AddCampaignComponent } from "./campaign/add-campaign/add-campaign.component";
 import {
   TrainingComponent,
   CategoryComponent,
@@ -45,6 +46,11 @@ export const SaintGobaonRoutes: Routes = [
   {
     path: "need",
     component: NeedComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "AddCampaign",
+    component: AddCampaignComponent,
     canActivate: [AuthGuard]
   },
   {

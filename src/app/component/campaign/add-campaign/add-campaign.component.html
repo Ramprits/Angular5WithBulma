@@ -1,5 +1,5 @@
 <form [formGroup]="AddCampaign" (ngSubmit)="insertCampaign(AddCampaign.value)">
-  <p-panel header="Login page">
+  <p-panel header="New Campaign">
     <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
       <div class="ui-grid-row">
         <div class="ui-grid-col-2">
@@ -43,7 +43,7 @@
           <em>*</em>
         </div>
         <div class="ui-grid-col-6">
-          <input type="text" pInputText formControlName="isActive">
+          <p-triStateCheckbox formControlName="isActive"></p-triStateCheckbox>
         </div>
         <div class="ui-grid-col-4">
         </div>
@@ -55,5 +55,6 @@
         </div>
       </div>
     </div>
+    <pre hidden>{{ AddCampaign.value | json }}</pre>
   </p-panel>
 </form>

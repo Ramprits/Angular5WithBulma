@@ -6,6 +6,7 @@ import {
   GrowlModule,
   ButtonModule,
   CheckboxModule,
+  TriStateCheckboxModule,
   DataGridModule
 } from "primeng/primeng";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
@@ -43,6 +44,7 @@ import { TrainingListComponent } from "./category/training-list.component";
     GrowlModule,
     DataGridModule,
     ButtonModule,
+    TriStateCheckboxModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
