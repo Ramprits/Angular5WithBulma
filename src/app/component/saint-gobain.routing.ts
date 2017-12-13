@@ -5,6 +5,7 @@ import { AddContactComponent } from "./contact/add-contact/add-contact.component
 import { AddTrainingComponent } from "./training/add-training/add-training.component";
 import { EmployeeComponent } from "./employee/employee.component";
 import { AuthGuard } from "../auth/auth.guard";
+import { CategoryDetailComponent } from "./category/category-detail";
 import {
   TrainingComponent,
   CategoryComponent,
@@ -25,6 +26,7 @@ export const SaintGobaonRoutes: Routes = [
     component: CategoryComponent,
     canActivate: [AuthGuard]
   },
+  { path: "category/:categoryId", component: CategoryDetailComponent },
   {
     path: "addTraining",
     component: AddTrainingComponent,

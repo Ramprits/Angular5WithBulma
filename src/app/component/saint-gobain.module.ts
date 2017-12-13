@@ -31,6 +31,8 @@ import { RootUrl } from "../core/root-url";
 import { AddTrainingComponent } from "./training/add-training/add-training.component";
 import { CommonModule } from "@angular/common";
 import { AddCampaignComponent } from "./campaign/add-campaign/add-campaign.component";
+import { CategoryDetailComponent } from "./category/category-detail";
+import { TrainingListComponent } from "./category/training-list.component";
 
 @NgModule({
   imports: [
@@ -58,7 +60,9 @@ import { AddCampaignComponent } from "./campaign/add-campaign/add-campaign.compo
     AddContactComponent,
     AddTrainingComponent,
     EmployeeComponent,
-    AddCampaignComponent
+    AddCampaignComponent,
+    CategoryDetailComponent,
+    TrainingListComponent
   ],
   providers: [
     CotegoryService,

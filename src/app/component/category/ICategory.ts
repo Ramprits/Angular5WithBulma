@@ -1,4 +1,5 @@
 import { GetTraining } from "../index";
+import { ITraining } from "../training/training.module";
 
 export interface ICategory {
   categoryId: string;
@@ -6,7 +7,7 @@ export interface ICategory {
   description: string;
   imageUrl: string;
   isActive: boolean;
-  training: GetTraining[];
+  trainings: ITraining[];
 }
 export class Category {
   public categoryId?: "";

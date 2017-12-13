@@ -27,6 +27,15 @@ export class CotegoryService {
       .catch(this.handleError);
   }
 
+  getCategorie(categoryId: ICategory): Observable<ICategory | TrackerError> {
+    return this.httpClient
+      .get<ICategory>(`http://localhost:5000/api/Categories` + `/${categoryId}`)
+      .map((category: ICategory) => {
+        return category;
+      })
+      .catch(this.handleError);
+  }
+
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {
     const dataError = new TrackerError();
     dataError.errorNumber = error.status;

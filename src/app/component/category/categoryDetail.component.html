@@ -1,9 +1,9 @@
-<div class="u-g">
-  <div style="padding:3px" class="ui-g-12 ui-md-3" *ngFor="let category of categories">
-    <div class="card" [routerLink]="['/category', category?.categoryId]">
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-6">
+    <div class="card">
       <div class="card-image">
         <figure class="image is-3by2">
-          <img src="assets/images/{{category.imageUrl}}" style="cursor:pointer">
+          <img src="../assets/images/{{category?.imageUrl}}" style="cursor:pointer">
         </figure>
       </div>
       <div class="card-content">
@@ -16,5 +16,7 @@
         </div>
       </div>
     </div>
+    <hr>
+    <b-training-list [trainings]="category?.trainings"></b-training-list>
   </div>
 </div>

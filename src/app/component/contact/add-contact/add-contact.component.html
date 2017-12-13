@@ -58,9 +58,9 @@
       <div class="ui-grid-row">
         <div class="ui-grid-col-2"></div>
         <div class="ui-grid-col-3">
-          <button pButton type="button" label="Cancel" (click)="Back()"></button>
         </div>
         <div class="ui-grid-col-3">
+          <button pButton type="button" label="Cancel" class="ui-button-danger" (click)="Back()"></button>
           <button pButton type="submit" label="Submit" [disabled]="!addContact.valid"></button>
         </div>
         <div class="ui-grid-col-4">

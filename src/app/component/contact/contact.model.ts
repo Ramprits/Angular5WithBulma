@@ -6,3 +6,7 @@ export class Contact {
   public email: string;
   public comment: string;
 }
+export interface IContactResponse {
+  status: boolean;
+  contact: Contact;
+}

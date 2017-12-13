@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Message } from "primeng/components/common/api";
 import { Router } from "@angular/router";
+import { ContactService } from "../contact.service";
+import { LoggerService } from "../../../core/logging.service";
+import { Contact } from "../contact.model";
 @Component({
   selector: "b-add-contact",
   templateUrl: "./add-contact.component.html"
@@ -9,7 +12,12 @@ import { Router } from "@angular/router";
 export class AddContactComponent implements OnInit {
   addContact: FormGroup;
   msgs: Message[] = [];
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private contactService: ContactService,
+    private logger: LoggerService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.addContact = this.fb.group({
@@ -22,7 +30,11 @@ export class AddContactComponent implements OnInit {
   }
 
   onSubmit(formData) {
-    console.log(formData);
+    this.contactService.Addontact(formData).subscribe((contact: any) => {
+      if (contact) {
+        this.router.navigate(["/"]);
+      }
+    });
   }
   Back() {
     this.router.navigate(["/saintGobain/contact"]);

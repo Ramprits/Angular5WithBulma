@@ -4,6 +4,7 @@ import { LoggerService } from "../../core/logging.service";
 import { Title } from "@angular/platform-browser";
 import { ICategory, Category } from "./ICategory";
 import { TrackerError } from "../../core/tracker.error";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "b-category",
@@ -15,7 +16,8 @@ export class CategoryComponent implements OnInit {
   constructor(
     private categoriesService: CotegoryService,
     private logger: LoggerService,
-    private title: Title
+    private title: Title,
+    private router: Router
   ) {
     this.title.setTitle("Categories");
     this.GetCategories();
@@ -28,9 +30,6 @@ export class CategoryComponent implements OnInit {
       .subscribe((category: ICategory[]) => {
         this.categories = category;
       });
-  }
-  onRowSelect(event) {
-   console.log(event);
   }
 
   cloneCar(c: Category): Category {
