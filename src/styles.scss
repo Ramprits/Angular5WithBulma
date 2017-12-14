@@ -365,16 +365,11 @@ td {
     width: 300px;
 }
 
-
-/*操作区域*/
-
 .operation-area {
     padding: 11px 15px 0 0.5rem;
     margin-bottom: 15px;
 }
 
-
-/*tr*/
 
 tr:hover {
     background-color: #EFF2F7 !important;
@@ -401,9 +396,6 @@ tr:hover {
     padding: 1px 3px !important;
 }
 
-
-/*分页 box 样式*/
-
 .paginator-box {
     position: relative;
 }
@@ -418,12 +410,6 @@ tr:hover {
 .paginator-goto input {
     width: 29px;
 }
-
-
-/*分页 box 样式 end*/
-
-
-/*dialog*/
 
 .dialog-footer {
     text-align: right;
@@ -448,9 +434,6 @@ tr:hover {
 .ui-g-padding0 .ui-g-12 {
     padding: 0;
 }
-
-
-/*dialog-content  中下拉选择超出显示*/
 
 .dialog-content-inherit .ui-dialog-content {
     overflow: inherit;
