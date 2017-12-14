@@ -3,10 +3,12 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { Title } from "@angular/platform-browser";
 import { CampaignService } from "../campaign.service";
 import { Router } from "@angular/router";
+import { pageAnimation } from "../../../core/public-data";
 
 @Component({
   selector: "b-add-campaign",
-  templateUrl: "./add-campaign.component.html"
+  templateUrl: "./add-campaign.component.html",
+  animations: [pageAnimation]
 })
 export class AddCampaignComponent implements OnInit {
   AddCampaign: FormGroup;

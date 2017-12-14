@@ -5,10 +5,12 @@ import { Title } from "@angular/platform-browser";
 import { ICategory, Category } from "./ICategory";
 import { TrackerError } from "../../core/tracker.error";
 import { Router } from "@angular/router";
+import { pageAnimation } from "../../core/public-data";
 
 @Component({
   selector: "b-category",
-  templateUrl: "./category.component.html"
+  templateUrl: "./category.component.html",
+  animations: [pageAnimation]
 })
 export class CategoryComponent implements OnInit {
   categories: ICategory[] | TrackerError;

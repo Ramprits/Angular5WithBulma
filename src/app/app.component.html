@@ -49,7 +49,7 @@
       <div class="navbar-item">
         <a class="navbar-item" style="color: white;" [routerLink]="['/login']" *ngIf="!auth.isAuthenticated">
           <span>
-            Login
+            Log in
           </span>
         </a>
         <a class="navbar-item" style="color: white;" [routerLink]="['/register']" *ngIf="!auth.isAuthenticated">
@@ -59,7 +59,7 @@
         </a>
         <a class="navbar-item" style="color: white;" (click)="logout()" *ngIf="auth.isAuthenticated">
           <span>
-            Sign-out
+            Sign out
           </span>
         </a>
       </div>

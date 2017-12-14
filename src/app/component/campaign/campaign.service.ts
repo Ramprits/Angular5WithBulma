@@ -28,7 +28,7 @@ export class CampaignService {
           return data.campaign;
         }
       })
-      .delay(2000)
+      .delay(10)
       .catch(this.handleError);
   }
 
